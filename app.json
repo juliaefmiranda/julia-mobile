@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "julia-mobile",
+    "slug": "julia-mobile",
+    "scheme": "julia-mobile",
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
