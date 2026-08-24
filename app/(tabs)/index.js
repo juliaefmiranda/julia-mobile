@@ -1,11 +1,5 @@
 import { Link } from "expo-router";
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import Header from "../components/Header";
@@ -24,47 +18,25 @@ export default function HomeScreen() {
           <View style={styles.tag}>
             <View style={styles.dot} />
 
-            <Text style={styles.tagText}>
-              DESENVOLVEDORA EM FORMAÇÃO
-            </Text>
+            <Text style={styles.tagText}>DESENVOLVEDORA EM FORMAÇÃO</Text>
           </View>
 
-          <Text style={styles.title}>
-            Criando experiências
-          </Text>
+          <Text style={styles.title}>Criando experiências</Text>
 
-          <Text style={styles.titleAccent}>
-            através da tecnologia.
-          </Text>
+          <Text style={styles.titleAccent}>através da tecnologia.</Text>
 
           <Text style={styles.description}>
             Olá, eu sou Julia. Estou construindo minha jornada no
-            desenvolvimento de sistemas, unindo tecnologia,
-            criatividade e design para transformar ideias em
-            experiências digitais.
+            desenvolvimento de sistemas, unindo tecnologia, criatividade e
+            design para transformar ideias em experiências digitais.
           </Text>
 
           <Link href="/sobre" asChild>
-            <Pressable
-              style={({ pressed }) => [
-                styles.button,
-                pressed && styles.buttonPressed,
-              ]}
-            >
-              <View style={styles.buttonContent}>
-                <Text style={styles.buttonLabel}>
-                  CONHEÇA MINHA HISTÓRIA
-                </Text>
-
-                <Text style={styles.buttonTitle}>
-                  Sobre mim
-                </Text>
-              </View>
+            <Pressable style={styles.button}>
+              <Text style={styles.buttonTitle}>Sobre mim</Text>
 
               <View style={styles.buttonArrow}>
-                <Text style={styles.arrow}>
-                  →
-                </Text>
+                <Text style={styles.arrow}>→</Text>
               </View>
             </Pressable>
           </Link>
@@ -137,72 +109,22 @@ const styles = StyleSheet.create({
 
   button: {
     width: "100%",
-    minHeight: 78,
-
-    marginTop: 30,
-
-    paddingLeft: 20,
-    paddingRight: 8,
-
-    backgroundColor: "#17294D",
-    borderRadius: 16,
-
+    padding: 15,
+    backgroundColor: "#F6F5F2",
+    borderRadius: 15,
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
-
+    alignItems: "center",
+    borderColor: "#B58A35",
     borderWidth: 1,
-    borderColor: "#263A63",
-
-    shadowColor: "#17294D",
-    shadowOffset: {
-      width: 0,
-      height: 7,
-    },
-    shadowOpacity: 0.18,
-    shadowRadius: 13,
-    elevation: 5,
-  },
-
-  buttonPressed: {
-    opacity: 0.85,
-    transform: [{ scale: 0.985 }],
-  },
-
-  buttonContent: {
-    flex: 1,
-    justifyContent: "center",
-  },
-
-  buttonLabel: {
-    fontSize: 8,
-    fontWeight: "800",
-    letterSpacing: 1.8,
-    color: "#C9A45D",
-    marginBottom: 6,
+    marginTop: 19,
   },
 
   buttonTitle: {
-    fontSize: 17,
-    fontWeight: "700",
-    color: "#FFFFFF",
+    fontSize: 14,
+    color: "#916c23",
+    fontWeight: "600",
   },
 
-  buttonArrow: {
-    width: 50,
-    height: 50,
-    borderRadius: 13,
-
-    backgroundColor: "#B58A35",
-
-    alignItems: "center",
-    justifyContent: "center",
-
-    marginLeft: 15,
-  },
-
-  arrow: {
-    fontSize: 18,
-    color: "#FFFFFF",
-  },
+  
 });

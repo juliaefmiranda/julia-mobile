@@ -8,32 +8,23 @@ export default function AboutCard() {
 
         <View style={styles.line} />
 
-        <Text style={styles.label}>
-          SOBRE MINHA ÁREA
-        </Text>
+        <Text style={styles.label}>SOBRE MINHA ÁREA</Text>
       </View>
 
       <View style={styles.card}>
-        <Text style={styles.title}>
-          Tecnologia com propósito.
-        </Text>
+        <Text style={styles.title}>Tecnologia com propósito.</Text>
 
         <Text style={styles.description}>
-          Gosto de entender não apenas como uma aplicação funciona,
-          mas também como as pessoas irão interagir com ela. Por isso,
-          meu processo envolve desenvolvimento, organização visual e
-          atenção aos detalhes.
+          Gosto de entender não apenas como uma aplicação funciona, mas também
+          como as pessoas irão interagir com ela. Por isso, meu processo envolve
+          desenvolvimento, organização visual e atenção aos detalhes.
         </Text>
 
         <View style={styles.bottom}>
           <View style={styles.focusContent}>
-            <Text style={styles.small}>
-              FOCO ATUAL
-            </Text>
+            <Text style={styles.small}>FOCO ATUAL</Text>
 
-            <Text style={styles.focus}>
-              Desenvolvimento Mobile
-            </Text>
+            <Text style={styles.focus}>Desenvolvimento Mobile</Text>
           </View>
 
           <View style={styles.arrowBox}>

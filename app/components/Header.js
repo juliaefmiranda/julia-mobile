@@ -5,11 +5,7 @@ const juliaLogo = require("../../assets/julialogo.png");
 export default function Header() {
   return (
     <View style={styles.header}>
-      <Image
-        source={juliaLogo}
-        style={styles.logo}
-        resizeMode="contain"
-      />
+      <Image source={juliaLogo} style={styles.logo} resizeMode="contain" />
 
       <View style={styles.line} />
 
