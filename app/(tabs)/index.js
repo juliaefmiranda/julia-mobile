@@ -1,6 +1,5 @@
 import { Link } from "expo-router";
 import {
-  Image,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -9,100 +8,69 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const juliaLogo = require("../../assets/julialogo.png");
+import Header from "../components/Header";
+import AboutCard from "../components/AboutCard";
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView
-      style={styles.safeArea}
-      edges={["bottom", "left", "right"]}
-    >
+    <SafeAreaView style={styles.safeArea}>
       <ScrollView
-        contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
-        bounces={false}
+        contentContainerStyle={styles.scrollContent}
       >
-        {/* LOGO */}
-        <View style={styles.logoArea}>
-          <Image
-            source={juliaLogo}
-            style={styles.logo}
-            resizeMode="cover"
-          />
-        </View>
+        <Header />
 
-        {/* CONTEÚDO */}
-        <View style={styles.content}>
-          <Text style={styles.eyebrow}>PORTFÓLIO • 2026</Text>
+        <View style={styles.hero}>
+          <View style={styles.tag}>
+            <View style={styles.dot} />
 
-          {/* TÍTULO */}
+            <Text style={styles.tagText}>
+              DESENVOLVEDORA EM FORMAÇÃO
+            </Text>
+          </View>
+
           <Text style={styles.title}>
-            Olá, eu sou a{" "}
-            <Text style={styles.titleHighlight}>Julia</Text>
+            Criando experiências
           </Text>
 
-          {/* CONTAINER */}
-          <View style={styles.container}>
-            <Text style={styles.description}>
-              Desenvolvedora em formação, explorando o universo do
-              desenvolvimento mobile e criando projetos que unem
-              tecnologia e criatividade.
-            </Text>
+          <Text style={styles.titleAccent}>
+            através da tecnologia.
+          </Text>
 
-            {/* ÁREAS */}
-            <View style={styles.section}>
-              <Text style={styles.sectionTitle}>
-                O que estou explorando
-              </Text>
+          <Text style={styles.description}>
+            Olá, eu sou Julia. Estou construindo minha jornada no
+            desenvolvimento de sistemas, unindo tecnologia,
+            criatividade e design para transformar ideias em
+            experiências digitais.
+          </Text>
 
-              <View style={styles.topics}>
-                <View style={styles.topic}>
-                  <Text style={styles.topicNumber}>01</Text>
-
-                  <Text style={styles.topicText}>
-                    Mobile Development
-                  </Text>
-                </View>
-
-                <View style={styles.topic}>
-                  <Text style={styles.topicNumber}>02</Text>
-
-                  <Text style={styles.topicText}>
-                    React Native
-                  </Text>
-                </View>
-
-                <View style={styles.topic}>
-                  <Text style={styles.topicNumber}>03</Text>
-
-                  <Text style={styles.topicText}>
-                    UI & UX
-                  </Text>
-                </View>
-              </View>
-            </View>
-
-            {/* FRASE */}
-            <View style={styles.quote}>
-              <View style={styles.quoteLine} />
-
-              <Text style={styles.quoteText}>
-                Transformando ideias em experiências através do código.
-              </Text>
-            </View>
-
-          </View>
-          {/* BOTÃO */}
-            <Link href="/sobre" asChild>
-              <Pressable style={styles.button}>
-                <Text style={styles.buttonText}>
-                  Me conheça melhor
+          <Link href="/sobre" asChild>
+            <Pressable
+              style={({ pressed }) => [
+                styles.button,
+                pressed && styles.buttonPressed,
+              ]}
+            >
+              <View style={styles.buttonContent}>
+                <Text style={styles.buttonLabel}>
+                  CONHEÇA MINHA HISTÓRIA
                 </Text>
 
-                <Text style={styles.arrow}>→</Text>
-              </Pressable>
-            </Link>
+                <Text style={styles.buttonTitle}>
+                  Sobre mim
+                </Text>
+              </View>
+
+              <View style={styles.buttonArrow}>
+                <Text style={styles.arrow}>
+                  →
+                </Text>
+              </View>
+            </Pressable>
+          </Link>
         </View>
+
+        <AboutCard />
       </ScrollView>
     </SafeAreaView>
   );
@@ -111,162 +79,130 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#f8f9fc",
+    backgroundColor: "#F6F5F2",
   },
 
-  scrollContainer: {
-    flexGrow: 1,
+  scrollContent: {
     paddingBottom: 40,
   },
 
-  /* LOGO */
-
-  logoArea: {
-    width: "100%",
-    height: 350,
-  },
-
-  logo: {
-    width: "100%",
-    height: "100%",
-  },
-
-  /* CONTEÚDO */
-
-  content: {
+  hero: {
     paddingHorizontal: 24,
-    paddingTop: 30,
+    paddingTop: 38,
   },
 
-  eyebrow: {
-    fontSize: 11,
-    fontWeight: "700",
-    letterSpacing: 2,
-    color: "#b58a35",
-    marginBottom: 8,
+  tag: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 18,
   },
 
-  /* TÍTULO */
+  dot: {
+    width: 7,
+    height: 7,
+    borderRadius: 4,
+    backgroundColor: "#B58A35",
+    marginRight: 9,
+  },
+
+  tagText: {
+    fontSize: 9,
+    fontWeight: "800",
+    letterSpacing: 1.7,
+    color: "#8A7040",
+  },
 
   title: {
-    fontSize: 36,
-    lineHeight: 42,
+    fontSize: 38,
+    lineHeight: 43,
+    fontWeight: "500",
+    color: "#17294D",
+    letterSpacing: -0.8,
+  },
+
+  titleAccent: {
+    fontSize: 38,
+    lineHeight: 43,
     fontWeight: "800",
-    color: "#14264d",
-  },
-
-  titleHighlight: {
-    color: "#b58a35",
-  },
-
-  /* CONTAINER */
-
-  container: {
-    marginTop: 22,
-    padding: 22,
-    borderRadius: 24,
-    backgroundColor: "#ffffff",
-    borderWidth: 1,
-    borderColor: "#e8e5de",
+    color: "#B58A35",
+    letterSpacing: -0.8,
   },
 
   description: {
-    fontSize: 16,
-    lineHeight: 25,
-    color: "#53627a",
+    marginTop: 22,
+    fontSize: 15,
+    lineHeight: 24,
+    color: "#666D7A",
   },
-
-  /* ÁREAS */
-
-  section: {
-    marginTop: 30,
-  },
-
-  sectionTitle: {
-    marginBottom: 14,
-    fontSize: 14,
-    fontWeight: "700",
-    letterSpacing: 0.5,
-    color: "#14264d",
-  },
-
-  topics: {
-    gap: 10,
-  },
-
-  topic: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 13,
-    paddingHorizontal: 15,
-    borderWidth: 1,
-    borderColor: "#e3dfd4",
-    borderRadius: 14,
-    backgroundColor: "#fafafa",
-  },
-
-  topicNumber: {
-    width: 32,
-    fontSize: 11,
-    fontWeight: "700",
-    color: "#b58a35",
-  },
-
-  topicText: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#14264d",
-    textTransform: "uppercase",
-    letterSpacing: 0.5,
-  },
-
-  /* FRASE */
-
-  quote: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 30,
-    gap: 12,
-  },
-
-  quoteLine: {
-    width: 4,
-    height: 42,
-    borderRadius: 4,
-    backgroundColor: "#b58a35",
-  },
-
-  quoteText: {
-    flex: 1,
-    fontSize: 14,
-    lineHeight: 21,
-    fontWeight: "500",
-    fontStyle: "italic",
-    color: "#6b7485",
-  },
-
-  /* BOTÃO */
 
   button: {
+    width: "100%",
+    minHeight: 78,
+
+    marginTop: 30,
+
+    paddingLeft: 20,
+    paddingRight: 8,
+
+    backgroundColor: "#17294D",
+    borderRadius: 16,
+
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 30,
-    paddingVertical: 17,
-    paddingHorizontal: 20,
-    borderRadius: 30,
-    backgroundColor: "#14264d",
+
+    borderWidth: 1,
+    borderColor: "#263A63",
+
+    shadowColor: "#17294D",
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 13,
+    elevation: 5,
   },
 
-  buttonText: {
-    fontSize: 15,
+  buttonPressed: {
+    opacity: 0.85,
+    transform: [{ scale: 0.985 }],
+  },
+
+  buttonContent: {
+    flex: 1,
+    justifyContent: "center",
+  },
+
+  buttonLabel: {
+    fontSize: 8,
+    fontWeight: "800",
+    letterSpacing: 1.8,
+    color: "#C9A45D",
+    marginBottom: 6,
+  },
+
+  buttonTitle: {
+    fontSize: 17,
     fontWeight: "700",
-    color: "#ffffff",
+    color: "#FFFFFF",
+  },
+
+  buttonArrow: {
+    width: 50,
+    height: 50,
+    borderRadius: 13,
+
+    backgroundColor: "#B58A35",
+
+    alignItems: "center",
+    justifyContent: "center",
+
+    marginLeft: 15,
   },
 
   arrow: {
-    fontSize: 22,
-    fontWeight: "400",
-    color: "#ffffff",
+    fontSize: 18,
+    color: "#FFFFFF",
   },
 });
