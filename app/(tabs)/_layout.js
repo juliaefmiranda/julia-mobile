@@ -20,24 +20,10 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="aulas"
+        name="destinos-listar"
         options={{
-          title: "Aulas",
-          headerTitle: "Conteúdo",
-        }}
-      />
-      <Tabs.Screen
-        name="interface"
-        options={{
-          title: "Interface",
-          headerTitle: "Interface",
-        }}
-      />
-      <Tabs.Screen
-        name="api"
-        options={{
-          title: "API",
-          headerTitle: "Conteúdo - API",
+          title: "Lista de Destinos",
+          headerTitle: "Conteúdo - Destinos",
         }}
       />
       <Tabs.Screen

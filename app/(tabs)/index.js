@@ -1,9 +1,8 @@
 import { Link } from "expo-router";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import Header from "../components/Header";
-import AboutCard from "../components/AboutCard";
+import Card from "../components/Card";
 
 export default function HomeScreen() {
   return (
@@ -14,35 +13,40 @@ export default function HomeScreen() {
       >
         <Header />
 
-        <View style={styles.hero}>
+        <View style={styles.topo}>
           <View style={styles.tag}>
             <View style={styles.dot} />
 
-            <Text style={styles.tagText}>DESENVOLVEDORA EM FORMAÇÃO</Text>
+            <Text style={styles.tagTexto}>DESENVOLVEDORA EM FORMAÇÃO</Text>
           </View>
 
-          <Text style={styles.title}>Criando experiências</Text>
+          <Text style={styles.titulo}>Criando experiências</Text>
 
-          <Text style={styles.titleAccent}>através da tecnologia.</Text>
+          <Text style={styles.tituloDestaque}>através da tecnologia.</Text>
 
-          <Text style={styles.description}>
+          <Text style={styles.descricao}>
             Olá, eu sou Julia. Estou construindo minha jornada no
             desenvolvimento de sistemas, unindo tecnologia, criatividade e
             design para transformar ideias em experiências digitais.
           </Text>
 
           <Link href="/sobre" asChild>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonTitle}>Sobre mim</Text>
+            <Pressable style={styles.botao}>
+              <Text style={styles.tituloBotao}>Me conheça melhor</Text>
 
-              <View style={styles.buttonArrow}>
-                <Text style={styles.arrow}>→</Text>
+              <View style={styles.seta}>
+                <Text style={styles.seta}>→</Text>
               </View>
             </Pressable>
           </Link>
         </View>
-
-        <AboutCard />
+        <Card
+        label="SOBRE MINHA ÁREA"
+        titulo="Tecnologia com propósito"
+        descricao="Gosto de entender não apenas como uma aplicação funciona, mas também como as pessoas irão interagir com ela. Por isso, meu processo envolve desenvolvimento, organização visual e atenção aos detalhes."
+        textoPequeno="FOCO ATUAL"
+        foco="Desenvolvimento Mobile"
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -58,7 +62,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
 
-  hero: {
+  topo: {
     paddingHorizontal: 24,
     paddingTop: 38,
   },
@@ -77,14 +81,14 @@ const styles = StyleSheet.create({
     marginRight: 9,
   },
 
-  tagText: {
+  tagTexto: {
     fontSize: 9,
     fontWeight: "800",
     letterSpacing: 1.7,
     color: "#8A7040",
   },
 
-  title: {
+  titulo: {
     fontSize: 38,
     lineHeight: 43,
     fontWeight: "500",
@@ -92,7 +96,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.8,
   },
 
-  titleAccent: {
+  tituloDestaque: {
     fontSize: 38,
     lineHeight: 43,
     fontWeight: "800",
@@ -100,31 +104,32 @@ const styles = StyleSheet.create({
     letterSpacing: -0.8,
   },
 
-  description: {
+  descricao: {
     marginTop: 22,
     fontSize: 15,
     lineHeight: 24,
     color: "#666D7A",
   },
 
-  button: {
+  botao: {
     width: "100%",
     padding: 15,
-    backgroundColor: "#F6F5F2",
+    backgroundColor: "#B58A35",
     borderRadius: 15,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderColor: "#B58A35",
-    borderWidth: 1,
     marginTop: 19,
   },
 
-  buttonTitle: {
+  tituloBotao: {
     fontSize: 14,
-    color: "#916c23",
+    color: "#e8e5e0",
     fontWeight: "600",
   },
 
+  seta: {
+    color: "#e8e5e0",
+  }
   
 });

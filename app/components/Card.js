@@ -1,34 +1,23 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function AboutCard() {
+export default function Card({label, titulo, descricao, textoPequeno, foco}) {
   return (
     <>
-      <View style={styles.divider}>
-        <Text style={styles.number}>01</Text>
-
-        <View style={styles.line} />
-
-        <Text style={styles.label}>SOBRE MINHA ÁREA</Text>
+      <View style={styles.divisor}>
+        <View style={styles.linha} />
+        <Text style={styles.label}>{label}</Text>
       </View>
 
       <View style={styles.card}>
-        <Text style={styles.title}>Tecnologia com propósito.</Text>
+        <Text style={styles.titulo}>{titulo}</Text>
 
-        <Text style={styles.description}>
-          Gosto de entender não apenas como uma aplicação funciona, mas também
-          como as pessoas irão interagir com ela. Por isso, meu processo envolve
-          desenvolvimento, organização visual e atenção aos detalhes.
-        </Text>
+        <Text style={styles.descricao}>{descricao}</Text>
 
-        <View style={styles.bottom}>
-          <View style={styles.focusContent}>
-            <Text style={styles.small}>FOCO ATUAL</Text>
+        <View style={styles.rodape}>
+          <View style={styles.focoArea}>
+            <Text style={styles.textoPequeno}>{textoPequeno}</Text>
 
-            <Text style={styles.focus}>Desenvolvimento Mobile</Text>
-          </View>
-
-          <View style={styles.arrowBox}>
-            <Text style={styles.arrow}>↗</Text>
+            <Text style={styles.foco}>{foco}</Text>
           </View>
         </View>
       </View>
@@ -37,7 +26,7 @@ export default function AboutCard() {
 }
 
 const styles = StyleSheet.create({
-  divider: {
+  divisor: {
     flexDirection: "row",
     alignItems: "center",
     marginHorizontal: 24,
@@ -45,14 +34,7 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
 
-  number: {
-    fontSize: 10,
-    fontWeight: "800",
-    color: "#B58A35",
-    marginRight: 12,
-  },
-
-  line: {
+  linha: {
     width: 35,
     height: 1,
     backgroundColor: "#B58A35",
@@ -73,7 +55,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderWidth: 1,
     borderColor: "#E7E4DD",
-
     shadowColor: "#17294D",
     shadowOffset: {
       width: 0,
@@ -84,7 +65,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
 
-  title: {
+  titulo: {
     fontSize: 22,
     lineHeight: 27,
     fontWeight: "700",
@@ -92,29 +73,27 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
 
-  description: {
+  descricao: {
     fontSize: 14,
     lineHeight: 22,
     color: "#6C7280",
   },
 
-  bottom: {
+  rodape: {
     marginTop: 24,
     paddingTop: 17,
-
     borderTopWidth: 1,
     borderTopColor: "#ECE9E3",
-
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
 
-  focusContent: {
+  focoArea: {
     flex: 1,
   },
 
-  small: {
+  textoPequeno: {
     fontSize: 8,
     fontWeight: "800",
     letterSpacing: 1.5,
@@ -122,24 +101,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 
-  focus: {
+  foco: {
     fontSize: 13,
     fontWeight: "700",
-    color: "#17294D",
-  },
-
-  arrowBox: {
-    width: 39,
-    height: 39,
-    borderRadius: 20,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#F2EFE8",
-    marginLeft: 15,
-  },
-
-  arrow: {
-    fontSize: 18,
     color: "#17294D",
   },
 });
