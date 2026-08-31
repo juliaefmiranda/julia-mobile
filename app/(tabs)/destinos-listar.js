@@ -120,6 +120,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 12,
     marginTop: 12,
+    borderWidth: 1,
+    borderColor: "#cbd5e1",
+    borderRadius: 8,
     backgroundColor: "white",
     borderRadius: 10,
     overflow: "hidden",
@@ -152,7 +155,7 @@ const styles = StyleSheet.create({
   status: {
     fontSize: 12,
     fontWeight: "700",
-    color: "#2596be",
+    color: "#B58A35",
     marginTop: 6,
   },
 });
