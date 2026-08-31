@@ -87,7 +87,7 @@ export default function DestinosListarScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#f8fbff",
+    backgroundColor: "#F6F5F2",
   },
 
   conteudo: {
