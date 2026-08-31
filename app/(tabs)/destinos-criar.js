@@ -189,7 +189,6 @@ const styles = StyleSheet.create({
 
   conteudo: { 
     padding: 24, 
-    paddingBottom: 48 
   },
 
   header: { 
@@ -212,38 +211,34 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     color: "#102542",
-    marginTop: 8,
-    marginBottom: 8,
   },
 
   rotulo: {
     fontSize: 13,
     fontWeight: "600",
     color: "#334155",
-    marginBottom: 4,
+    marginBottom: 5,
   },
   campo: {
     borderWidth: 1,
     borderColor: "#cbd5e1",
     borderRadius: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    marginBottom: 12,
+    padding: 12,
+    marginBottom: 16,
     backgroundColor: "white",
   },
   opcoes: { 
     flexDirection: "row", 
     flexWrap: "wrap", 
     gap: 8, 
-    marginBottom: 12, 
+    marginBottom: 20, 
   }, 
   
   opcao: { 
     borderWidth: 1, 
     borderColor: "#cbd5e1", 
     borderRadius: 18, 
-    paddingHorizontal: 14, 
-    paddingVertical: 9, 
+    padding: 11,
     backgroundColor: "white", 
   }, 
   
