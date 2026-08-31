@@ -1,4 +1,5 @@
 import { Tabs } from "expo-router";
+import {Ionicons} from "@expo/vector-icons";
 
 export default function TabsLayout() {
   return (
@@ -16,21 +17,50 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: "Início",
-          headerTitle: "Projeto Base",
+          headerTitle: "Início",
+          tabBarIcon: ({color, size}) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          )
         }}
       />
       <Tabs.Screen
         name="destinos-listar"
         options={{
           title: "GET",
-          headerTitle: "Conteúdo - Destinos",
+          headerTitle: "Lista de destinos",
+          tabBarIcon: ({color, size}) => (
+            <Ionicons name="airplane-outline" size={size} color={color} />
+          )
         }}
       />
       <Tabs.Screen
         name="destinos-criar"
         options={{
           title: "POST",
-          headerTitle: "Conteúdo - Destinos",
+          headerTitle: "Crie um novo destino",
+          tabBarIcon: ({color, size}) => (
+            <Ionicons name="location-outline" size={size} color={color} />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="destinos-deletar"
+        options={{
+          title: "DELETE",
+          headerTitle: "Delete um destino",
+          tabBarIcon: ({color, size}) => (
+            <Ionicons name="trash-outline" size={size} color={color} />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="sobre"
+        options={{
+          title: "Sobre",
+          headerTitle: "Sobre mim",
+          tabBarIcon: ({color, size}) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          )
         }}
       />
     </Tabs>

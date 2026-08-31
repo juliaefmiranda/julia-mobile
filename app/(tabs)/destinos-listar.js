@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useCallback } from "react";
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import axios from "axios"; //lib usada para fazer chamadas HTTP para API
 import { SafeAreaView } from "react-native-safe-area-context"; // evita que o conteúdo fique embaixo do notch/ barra do celular
+import { useFocusEffect } from "expo-router";
 
 const API_KEY =
   "cv_FTuu3Fs8nTK7yXxbiAXjO4Hmn3sY3wYtAexGcKYu68Ai_H_FX3itFlyOBs3mUtia";
@@ -40,9 +41,11 @@ export default function DestinosListarScreen() {
     }
   }
 
-  useEffect(() => {
-    buscarDestinos();
-  }, []);
+  useFocusEffect(
+    useCallback(() => { //atualiza a lista de destinos sempre que a tela é aberta dnv (qnd recebe o foco)
+      buscarDestinos();
+    }, []),
+  );
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -59,23 +62,20 @@ export default function DestinosListarScreen() {
         {!carregando &&
           destinos.map((destino) => (
             <View key={destino.id} style={styles.card}>
-              <Image
-                source={{
-                  uri: `https://api-ds.codeverse.dev.br${destino.imageUrl}`,
-                }}
-                style={styles.imagem}
-              />
+              <Image source={{ uri: destino.imageUrl }} style={styles.imagem} />
               <View style={styles.info}>
                 <Text style={styles.titulo}>{destino.title}</Text>
-               
+
                 <Text style={styles.detalhes}>
-                  {destino.pais} ·  {destino.tipo_destino}
+                  {destino.pais} · {destino.tipo_destino}
                 </Text>
                 <Text style={styles.detalhes}>
-                 Melhor época: {destino.melhor_epoca}
+                  Melhor época: {destino.melhor_epoca}
                 </Text>
 
-                <Text style={styles.status}>Custo médio: R${destino.custo_medio}</Text>
+                <Text style={styles.status}>
+                  Custo médio: R${destino.custo_medio}
+                </Text>
               </View>
             </View>
           ))}
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   subtitulo: {
     fontSize: 14,
     color: "#5f6b7a",
-    marginTop: 2,
+    marginTop: 5,
   },
 
   erro: {
@@ -120,17 +120,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 12,
     marginTop: 12,
-    borderWidth: 1,
-    borderColor: "#cbd5e1",
-    borderRadius: 8,
+    borderWidth: 0.5,
+    borderColor: "#b58a358a",
+    borderRadius: 15,
     backgroundColor: "white",
-    borderRadius: 10,
     overflow: "hidden",
   },
 
   imagem: {
     width: 100,
-    height: 120,
+    height: 110,
   },
 
   info: {
@@ -143,7 +142,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#102542"
+    color: "#102542",
   },
 
   detalhes: {

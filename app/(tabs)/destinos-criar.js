@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   subtitulo: { 
     fontSize: 14, 
     color: "#5f6b7a", 
-    marginTop: 2 
+    marginTop: 5 
   },
 
   secao: {
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "600",
     color: "#334155",
-    marginBottom: 5,
+    margin: 3,
   },
   campo: {
     borderWidth: 1,
