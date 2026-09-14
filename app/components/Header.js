@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
 
   logo: {
     position: "absolute",
-    left: -30,
+    left: 15,
     top: 0,
-    width: 210,
+    width: 100,
     height: 105,
   },
 
@@ -33,18 +33,18 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 130,
     right: 63,
-    top: 52,
+    top: 58,
     height: 1,
-    backgroundColor: "#DCD9D2",
+    backgroundColor: "#b58a358a",
   },
 
   year: {
     position: "absolute",
     right: 18,
-    top: 46,
+    top: 51,
     fontSize: 9,
     fontWeight: "700",
     letterSpacing: 1.5,
-    color: "#8B877F",
+    color: "#b58a35c0",
   },
 });

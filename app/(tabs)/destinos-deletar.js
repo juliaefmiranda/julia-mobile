@@ -12,7 +12,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
 
-const API_KEY = "cv_FTuu3Fs8nTK7yXxbiAXjO4Hmn3sY3wYtAexGcKYu68Ai_H_FX3itFlyOBs3mUtia";
+const API_KEY = "cv_Na-JCs28Pv5wim0lXht00z-hCd5F9Bq9oXRi2np8Xj2CZDpDNSFk7mcBZvqWvNKi";
 
 const api = axios.create({
   baseURL: "https://api-ds.codeverse.dev.br",
@@ -152,12 +152,11 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: "#b58a358a",
     borderRadius: 15,
-    borderRadius: 10,
     overflow: "hidden",
     paddingRight: 12,
   },
   imagem: { 
-    width: 100, 
+    width: 110, 
     height: 110 
 },
   info: { 

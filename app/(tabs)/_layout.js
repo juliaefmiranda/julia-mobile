@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import {Ionicons} from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function TabsLayout() {
   return (
@@ -16,11 +16,11 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Início",
-          headerTitle: "Início",
-          tabBarIcon: ({color, size}) => (
+          title: "Home",
+          headerTitle: "Home",
+          tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
       <Tabs.Screen
@@ -28,9 +28,9 @@ export default function TabsLayout() {
         options={{
           title: "GET",
           headerTitle: "Lista de destinos",
-          tabBarIcon: ({color, size}) => (
+          tabBarIcon: ({ color, size }) => (
             <Ionicons name="airplane-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
       <Tabs.Screen
@@ -38,9 +38,9 @@ export default function TabsLayout() {
         options={{
           title: "POST",
           headerTitle: "Crie um novo destino",
-          tabBarIcon: ({color, size}) => (
+          tabBarIcon: ({ color, size }) => (
             <Ionicons name="location-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
       <Tabs.Screen
@@ -48,19 +48,29 @@ export default function TabsLayout() {
         options={{
           title: "DELETE",
           headerTitle: "Delete um destino",
-          tabBarIcon: ({color, size}) => (
+          tabBarIcon: ({ color, size }) => (
             <Ionicons name="trash-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
       <Tabs.Screen
-        name="sobre"
+        name="destinos-atualizar"
         options={{
-          title: "Sobre",
-          headerTitle: "Sobre mim",
-          tabBarIcon: ({color, size}) => (
-            <Ionicons name="person-outline" size={size} color={color} />
-          )
+          title: "UPDATE",
+          headerTitle: "Atualize um destino",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="sync-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="destinos-id"
+        options={{
+          title: "ID",
+          headerTitle: "Busque um destino",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="id-card-outline" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>

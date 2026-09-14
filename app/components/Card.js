@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Card({label, titulo, descricao, textoPequeno, foco}) {
+export default function Card({label, titulo, descricao}) {
   return (
     <>
       <View style={styles.divisor}>

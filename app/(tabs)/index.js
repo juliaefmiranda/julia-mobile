@@ -24,16 +24,6 @@ export default function HomeScreen() {
             desenvolvimento de sistemas, unindo tecnologia, criatividade e
             design para transformar ideias em experiências digitais.
           </Text>
-
-          <Link href="/sobre" asChild>
-            <Pressable style={styles.botao}>
-              <Text style={styles.tituloBotao}>Me conheça melhor</Text>
-
-              <View style={styles.seta}>
-                <Text style={styles.seta}>→</Text>
-              </View>
-            </Pressable>
-          </Link>
         </View>
         <Card
         label="SOBRE MINHA ÁREA"
@@ -82,26 +72,5 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: "#666D7A",
   },
-
-  botao: {
-    width: "100%",
-    padding: 15,
-    backgroundColor: "#B58A35",
-    borderRadius: 15,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginTop: 19,
-  },
-
-  tituloBotao: {
-    fontSize: 14,
-    color: "#e8e5e0",
-    fontWeight: "600",
-  },
-
-  seta: {
-    color: "#e8e5e0",
-  }
   
 });
