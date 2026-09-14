@@ -4,7 +4,8 @@
     "slug": "julia-mobile",
     "scheme": "julia-mobile",
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-status-bar"
     ],
     "experiments": {
       "typedRoutes": true

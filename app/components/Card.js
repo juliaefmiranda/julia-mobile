@@ -13,13 +13,6 @@ export default function Card({label, titulo, descricao, textoPequeno, foco}) {
 
         <Text style={styles.descricao}>{descricao}</Text>
 
-        <View style={styles.rodape}>
-          <View style={styles.focoArea}>
-            <Text style={styles.textoPequeno}>{textoPequeno}</Text>
-
-            <Text style={styles.foco}>{foco}</Text>
-          </View>
-        </View>
       </View>
     </>
   );
@@ -77,33 +70,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 22,
     color: "#6C7280",
-  },
-
-  rodape: {
-    marginTop: 24,
-    paddingTop: 17,
-    borderTopWidth: 1,
-    borderTopColor: "#ECE9E3",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-
-  focoArea: {
-    flex: 1,
-  },
-
-  textoPequeno: {
-    fontSize: 8,
-    fontWeight: "800",
-    letterSpacing: 1.5,
-    color: "#B58A35",
-    marginBottom: 5,
-  },
-
-  foco: {
-    fontSize: 13,
-    fontWeight: "700",
-    color: "#17294D",
   },
 });

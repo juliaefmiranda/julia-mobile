@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
 
   line: {
     position: "absolute",
-    left: 180,
-    right: 55,
+    left: 130,
+    right: 63,
     top: 52,
     height: 1,
     backgroundColor: "#DCD9D2",

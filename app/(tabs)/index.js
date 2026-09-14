@@ -14,11 +14,6 @@ export default function HomeScreen() {
         <Header />
 
         <View style={styles.topo}>
-          <View style={styles.tag}>
-            <View style={styles.dot} />
-
-            <Text style={styles.tagTexto}>DESENVOLVEDORA EM FORMAÇÃO</Text>
-          </View>
 
           <Text style={styles.titulo}>Criando experiências</Text>
 
@@ -44,8 +39,6 @@ export default function HomeScreen() {
         label="SOBRE MINHA ÁREA"
         titulo="Tecnologia com propósito"
         descricao="Gosto de entender não apenas como uma aplicação funciona, mas também como as pessoas irão interagir com ela. Por isso, meu processo envolve desenvolvimento, organização visual e atenção aos detalhes."
-        textoPequeno="FOCO ATUAL"
-        foco="Desenvolvimento Mobile"
         />
       </ScrollView>
     </SafeAreaView>
@@ -65,27 +58,6 @@ const styles = StyleSheet.create({
   topo: {
     paddingHorizontal: 24,
     paddingTop: 38,
-  },
-
-  tag: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 18,
-  },
-
-  dot: {
-    width: 7,
-    height: 7,
-    borderRadius: 4,
-    backgroundColor: "#B58A35",
-    marginRight: 9,
-  },
-
-  tagTexto: {
-    fontSize: 9,
-    fontWeight: "800",
-    letterSpacing: 1.7,
-    color: "#8A7040",
   },
 
   titulo: {
