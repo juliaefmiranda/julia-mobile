@@ -13,7 +13,7 @@ import axios from "axios";
 import Header from "../components/Header";
 
 const API_KEY =
-  "cv_Na-JCs28Pv5wim0lXht00z-hCd5F9Bq9oXRi2np8Xj2CZDpDNSFk7mcBZvqWvNKi";
+  "cv_Gn0qOruAr2cddoXPAbLw3Jv8Nt98wHmApPnTxUtPSj0L6dnNhBXZDtujN_vwbml9";
 
 const api = axios.create({
   baseURL: "https://api-ds.codeverse.dev.br",
@@ -235,11 +235,10 @@ const styles = StyleSheet.create({
     gap: 8, 
     marginBottom: 20, 
   }, 
-  
   opcao: { 
     borderWidth: 0.5,
     borderColor: "#b58a358a",
-    borderRadius: 15,
+    borderRadius: 18,
     padding: 11,
     backgroundColor: "white", 
   }, 

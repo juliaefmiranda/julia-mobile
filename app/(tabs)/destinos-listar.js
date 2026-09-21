@@ -16,7 +16,7 @@ import { useFocusEffect } from "expo-router";
 import Header from "../components/Header";
 
 const API_KEY =
-  "cv_Na-JCs28Pv5wim0lXht00z-hCd5F9Bq9oXRi2np8Xj2CZDpDNSFk7mcBZvqWvNKi";
+  "cv_Gn0qOruAr2cddoXPAbLw3Jv8Nt98wHmApPnTxUtPSj0L6dnNhBXZDtujN_vwbml9";
 
 const api = axios.create({
   baseURL: "https://api-ds.codeverse.dev.br",
@@ -78,7 +78,7 @@ export default function DestinosListarScreen() {
   }
 
   useFocusEffect(
-    useCallback(() => { //atualiza a lista de destinos sempre que a tela é aberta dnv (qnd recebe o foco)
+    useCallback(() => { //Atualiza a lista de destinos sempre que a tela é aberta dnv (qnd recebe o foco)
       buscarDestinos();
     }, []),
   );

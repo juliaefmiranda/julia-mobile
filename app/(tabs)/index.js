@@ -80,15 +80,14 @@ const styles = StyleSheet.create({
   modal: {
     alignItems: "center",
     marginTop: 25,
-    backgroundColor: "#c39842",
-    padding: 20,
-    borderRadius: 18,
+    backgroundColor: "#b58a35ce",
+    paddingVertical: 16,
+    borderRadius: 10,
   },
   textoModal: {
-    fontSize: 14,
     fontWeight: "700",
     color: "#fff",
-    letterSpacing: 1.3,
+
   }
 
 });

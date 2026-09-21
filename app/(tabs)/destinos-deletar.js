@@ -13,7 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
 import Header from "../components/Header";
 
-const API_KEY = "cv_Na-JCs28Pv5wim0lXht00z-hCd5F9Bq9oXRi2np8Xj2CZDpDNSFk7mcBZvqWvNKi";
+const API_KEY = "cv_Gn0qOruAr2cddoXPAbLw3Jv8Nt98wHmApPnTxUtPSj0L6dnNhBXZDtujN_vwbml9";
 
 const api = axios.create({
   baseURL: "https://api-ds.codeverse.dev.br",
@@ -68,6 +68,7 @@ export default function DestinosExcluirScreen() {
     try {
       await api.delete(`/api/destinos/${id}`);
 
+      //Atualiza a lista mostrando apenas os destinos com ID diferente do que foi excluído.
       setDestinos((atual) => atual.filter((item) => item.id !== id));
 
       Alert.alert("Sucesso!", "Destino excluido com sucesso!");

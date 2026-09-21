@@ -15,7 +15,7 @@ import axios from "axios";
 import Header from "../components/Header";
 
 const API_KEY =
-  "cv_Na-JCs28Pv5wim0lXht00z-hCd5F9Bq9oXRi2np8Xj2CZDpDNSFk7mcBZvqWvNKi";
+  "cv_Gn0qOruAr2cddoXPAbLw3Jv8Nt98wHmApPnTxUtPSj0L6dnNhBXZDtujN_vwbml9";
 
 const api = axios.create({
   baseURL: "https://api-ds.codeverse.dev.br",
@@ -121,23 +121,23 @@ export default function DestinosEditarScreen() {
             {carregando && <ActivityIndicator style={{ marginVertical: 16 }} />}
             {erro && <Text style={styles.erro}>{erro}</Text>}
 
-        {!carregando &&
-          destinos.map((item) => (
-            <View key={item.id} style={styles.card}>
-              <Image source={{ uri: item.imageUrl }} style={styles.imagem} />
-              <View style={styles.info}>
-                <Text style={styles.titulo}>{item.title}</Text>
-              </View>
-              <Pressable
-                style={styles.botaoEditar}
-                onPress={() => selecionarDestino(item)}
-              >
-                <Text style={styles.botaoEditarTexto}>Editar</Text>
-              </Pressable>
-            </View>
-          ))}
+            {!carregando &&
+              destinos.map((item) => (
+                <View key={item.id} style={styles.card}>
+                  <Image source={{ uri: item.imageUrl }} style={styles.imagem} />
+                  <View style={styles.info}>
+                    <Text style={styles.titulo}>{item.title}</Text>
+                  </View>
+                  <Pressable
+                    style={styles.botaoEditar}
+                    onPress={() => selecionarDestino(item)}
+                  >
+                    <Text style={styles.botaoEditarTexto}>Editar</Text>
+                  </Pressable>
+                </View>
+              ))}
           </>
-          )}
+        )}
 
         {selecionado && (
           <>
@@ -176,13 +176,23 @@ export default function DestinosEditarScreen() {
             />
 
             <Text style={styles.rotulo}>Tipo de destino</Text>
-            <TextInput
-              style={styles.campo}
-              value={tipoDestino}
-              onChangeText={setTipoDestino}
-              placeholder="Ex: Cidade"
-              placeholderTextColor="#5f6b7a"
-            />
+            <View style={styles.opcoes}>
+              {["Cidade", "Montanha", "Natureza", "Praia"].map(
+                (opcao) => (
+                  <Pressable key={opcao}
+                    style={[styles.opcao, tipoDestino === opcao && styles.opcaoSelecionada]}
+                    onPress={() => setTipoDestino(opcao)}
+                  >
+                    <Text style={[
+                      styles.opcaoTexto,
+                      tipoDestino === opcao && styles.opcaoTextoSelecionada
+                    ]}>
+                      {opcao}
+                    </Text>
+                  </Pressable>
+                )
+              )}
+            </View>
 
             <Text style={styles.rotulo}>Melhor época para visitar</Text>
             <TextInput
@@ -315,7 +325,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "600",
     color: "#334155",
-    margin: 3,
+    margin: 6,
   },
 
   campo: {
@@ -337,5 +347,32 @@ const styles = StyleSheet.create({
   botaoTexto: {
     color: "white",
     fontWeight: "700",
+  },
+  opcoes: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+    marginBottom: 20,
+  },
+  opcao: {
+    borderWidth: 0.5,
+    borderColor: "#b58a358a",
+    borderRadius: 18,
+    padding: 11,
+    backgroundColor: "white",
+  },
+
+  opcaoSelecionada: {
+    backgroundColor: "#B58A35",
+    borderColor: "#B58A35",
+  },
+  opcaoTexto: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: "#64748b",
+  },
+
+  opcaoTextoSelecionada: {
+    color: "white",
   },
 });

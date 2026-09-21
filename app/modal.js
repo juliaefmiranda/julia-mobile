@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Card from "./components/Card";
 
 export default function ModalScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Text style={styles.title}>SOBRE MIM</Text>
         <Text style={styles.subtitle}>Olá, eu sou a Julia Erlo!</Text>
         <Text style={styles.description}>
@@ -13,16 +14,17 @@ export default function ModalScreen() {
           ideias e transformar criatividade em experiências digitais.
         </Text>
 
-        <View style={styles.info}>
-          <Text style={styles.infoTitle}>Minha área</Text>
-          <Text style={styles.infoText}>Desenvolvimento de Sistemas - DS</Text>
-        </View>
-
-        <View style={styles.info}>
-          <Text style={styles.infoTitle}>Interesses</Text>
-          <Text style={styles.infoText}>Tecnologia • Leitura • Dança • Front-end</Text>
-        </View>
-      </View>
+        <Card
+          label=" MINHA ÁREA"
+          titulo="Desenvolvimento de Sistemas"
+          descricao="Curso oferecido pelo SENAI Valinhos, que ao longo dos 2 anos de curso, contempla matérias como Sistemas Operacionais, Lógica de Programação, Back-end, Banco de Dados, Desenvolvimento Mobile, entre muitas outras!"
+        />
+        <Card
+          label="MEUS INTERESSES"
+          titulo="Tecnologia • Leitura • Dança • Front-end"
+          descricao="Curso oferecido pelo SENAI Valinhos, que ao longo dos 2 anos de curso, contempla matérias como Sistemas Operacionais, Lógica de Programação, Back-end, Banco de Dados, Desenvolvimento Mobile, entre muitas outras!"
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -35,7 +37,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    justifyContent: "flex-start",
     gap: 18,
   },
   title: {
@@ -49,11 +50,13 @@ const styles = StyleSheet.create({
     letterSpacing: 1.7,
     fontWeight: "800",
     color: "#17294D",
+    paddingTop: 15,
   },
   description: {
     fontSize: 16,
     lineHeight: 24,
     color: "#17294D",
+    paddingTop: 15,
   },
   info: {
     padding: 17,
