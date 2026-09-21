@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
   divisor: {
     flexDirection: "row",
     alignItems: "center",
-    marginHorizontal: 24,
     marginTop: 48,
     marginBottom: 18,
   },
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
     width: 35,
     height: 1,
     backgroundColor: "#B58A35",
-    marginRight: 12,
+    marginHorizontal: 7,
   },
 
   label: {
@@ -42,8 +41,8 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    marginHorizontal: 24,
-    padding: 23,
+
+    padding: 25,
     borderRadius: 20,
     backgroundColor: "#FFFFFF",
     borderWidth: 1,

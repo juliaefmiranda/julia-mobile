@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
+import Header from "../components/Header";
 
 const API_KEY = "cv_Na-JCs28Pv5wim0lXht00z-hCd5F9Bq9oXRi2np8Xj2CZDpDNSFk7mcBZvqWvNKi";
 
@@ -84,6 +85,7 @@ export default function DestinosExcluirScreen() {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.conteudo}>
         <View style={styles.header}>
+          <Header />
           <Text style={styles.tituloPagina}>Excluir destino</Text>
           <Text style={styles.subtitulo}>DELETE /api/destinos/:id</Text>
         </View>
@@ -123,7 +125,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F6F5F2" 
 },
   conteudo: { 
-    padding: 24, 
+    paddingHorizontal: 24, 
     paddingBottom: 48
  },
   header: { 

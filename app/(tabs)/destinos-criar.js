@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
+import Header from "../components/Header";
 
 const API_KEY =
   "cv_Na-JCs28Pv5wim0lXht00z-hCd5F9Bq9oXRi2np8Xj2CZDpDNSFk7mcBZvqWvNKi";
@@ -99,6 +100,7 @@ export default function DestinosCriarScreen() {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.conteudo}>
         <View style={styles.header}>
+          <Header />
           <Text style={styles.tituloPagina}>Criar destino</Text>
           <Text style={styles.subtitulo}>POST /api/destinos</Text>
         </View>
@@ -188,7 +190,7 @@ const styles = StyleSheet.create({
   },
 
   conteudo: { 
-    padding: 24, 
+    paddingHorizontal: 24,
   },
 
   header: { 

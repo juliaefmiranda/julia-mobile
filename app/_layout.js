@@ -11,7 +11,7 @@ export default function RootLayout() {
           name="modal"
           options={{
             presentation: "modal",
-            title: "Exemplo de modal",
+            title: "Me conheça melhor",
           }}
         />
       </Stack>

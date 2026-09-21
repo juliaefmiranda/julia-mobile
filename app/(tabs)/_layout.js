@@ -6,6 +6,7 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShadowVisible: false,
+        headerShown: false,
         tabBarActiveTintColor: "#0f62fe",
         tabBarLabelStyle: {
           fontSize: 12,
@@ -60,16 +61,6 @@ export default function TabsLayout() {
           headerTitle: "Atualize um destino",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="sync-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="destinos-id"
-        options={{
-          title: "ID",
-          headerTitle: "Busque um destino",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="id-card-outline" size={size} color={color} />
           ),
         }}
       />

@@ -1,8 +1,9 @@
 import { Link } from "expo-router";
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/Header";
 import Card from "../components/Card";
+import { router } from "expo-router";
 
 export default function HomeScreen() {
   return (
@@ -26,10 +27,14 @@ export default function HomeScreen() {
           </Text>
         </View>
         <Card
-        label="SOBRE MINHA ÁREA"
-        titulo="Tecnologia com propósito"
-        descricao="Gosto de entender não apenas como uma aplicação funciona, mas também como as pessoas irão interagir com ela. Por isso, meu processo envolve desenvolvimento, organização visual e atenção aos detalhes."
+          label="SOBRE MINHA ÁREA"
+          titulo="Tecnologia com propósito"
+          descricao="Gosto de entender não apenas como uma aplicação funciona, mas também como as pessoas irão interagir com ela. Por isso, meu processo envolve desenvolvimento, organização visual e atenção aos detalhes."
         />
+
+        <TouchableOpacity onPress={() => router.push("/modal")} style={styles.modal}>
+          <Text style={styles.textoModal}>Me conheça melhor!</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -43,11 +48,11 @@ const styles = StyleSheet.create({
 
   scrollContent: {
     paddingBottom: 40,
+    paddingHorizontal: 24,
   },
 
   topo: {
-    paddingHorizontal: 24,
-    paddingTop: 38,
+    paddingTop: 10,
   },
 
   titulo: {
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
     lineHeight: 43,
     fontWeight: "500",
     color: "#17294D",
-    letterSpacing: -0.8,
+    letterSpacing: -0.6,
   },
 
   tituloDestaque: {
@@ -72,5 +77,18 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: "#666D7A",
   },
-  
+  modal: {
+    alignItems: "center",
+    marginTop: 25,
+    backgroundColor: "#c39842",
+    padding: 20,
+    borderRadius: 18,
+  },
+  textoModal: {
+    fontSize: 14,
+    fontWeight: "700",
+    color: "#fff",
+    letterSpacing: 1.3,
+  }
+
 });
